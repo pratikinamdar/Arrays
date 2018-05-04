@@ -23,7 +23,7 @@ cout<<"Array1:"<<endl;
      }
 }
 
-void sortt(vector<int> &v2, int l2)
+void sortArray2(vector<int> &v2, int l2)
 {
     int i=0;
     while(v2[i]>v2[i+1] && i<l2-1)
@@ -61,7 +61,7 @@ void mergee(vector<int> &v1, vector<int> &v2)
              int temp = v1[i];
              v1[i] = v2[j];
              v2[j] = temp;
-             sortt(v2, v2.size());
+             sortArray2(v2, v2.size());
              i--;
          }
     }
