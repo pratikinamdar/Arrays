@@ -1,5 +1,5 @@
 /* This code takes 2 sorted arrays as input and merges them in such a way that the first set of sorted elements are in first array
-and the remaining are in the second array. This is done using O(1) space and worst case time complexity of O(lengthOfArray1+LengthofArray2) The input arrays must be sorted else the program will malfunction. 
+and the remaining are in the second array. This is done using O(1) space and worst case time complexity of O(lengthOfArray1*LengthofArray2) The input arrays must be sorted else the program will malfunction. 
 
 #include <iostream>
 #include<vector>
