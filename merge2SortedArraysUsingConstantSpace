@@ -1,15 +1,21 @@
 /* This code takes 2 sorted arrays as input and merges them in such a way that the first set of sorted elements are in first array
-and the remaining are in the second array. This is done using O(1) space and worst case time complexity of O(lengthOfArray1*LengthofArray2) The input arrays must be sorted else the program will malfunction. 
+and the remaining are in the second array. This is done using O(1) space and worst case time complexity of O(lengthOfArray1*LengthofArray2) The input arrays must be sorted else the program will malfunction.*/ 
 
 #include <iostream>
 #include<vector>
 #include<algorithm>
 
 using namespace std;
-
+class merg
+{
+    
+ public:
+      vector<int> v1;
+   vector<int> v2;
 void print(vector<int> &v1, vector<int> &v2, int l1, int l2)
 {
-cout<<"Array1:"<<endl;
+    cout<<endl<<endl<<"********Output**********";
+cout<<endl<<"Array1:"<<endl;
      for(int i=0;i<l1;i++)
      {
          cout<<v1[i]<<"\t";
@@ -23,7 +29,7 @@ cout<<"Array1:"<<endl;
      }
 }
 
-void sortArray2(vector<int> &v2, int l2)
+void sort2ndArray(vector<int> &v2, int l2)
 {
     int i=0;
     while(v2[i]>v2[i+1] && i<l2-1)
@@ -35,7 +41,7 @@ void sortArray2(vector<int> &v2, int l2)
     }
 }
 
-void mergee(vector<int> &v1, vector<int> &v2)
+void merge(vector<int> &v1, vector<int> &v2)
 {
     int l1 = v1.size();
     int l2 = v2.size();
@@ -61,7 +67,7 @@ void mergee(vector<int> &v1, vector<int> &v2)
              int temp = v1[i];
              v1[i] = v2[j];
              v2[j] = temp;
-             sortArray2(v2, v2.size());
+             sort2ndArray(v2, v2.size());
              i--;
          }
     }
@@ -71,14 +77,37 @@ void mergee(vector<int> &v1, vector<int> &v2)
     
 }
 
+};
+
 
 
 int main()
 {
-   vector<int> v1 = {1,2,3,4,5,6};
-   vector<int> v2= {-1,-2,-3,-4,-5,-6};
+   merg m1;
+   int data;
+ 
+   int l1=0, l2=0;
+   cout<<"Enter length of first array\n";
+   cin>>l1;
+   cout<<"Enter "<<l1<<" elements\n";
+   for(int i=0;i<l1;i++)
+   {
+       cin>>data;
+       m1.v1.push_back(data);
+       cout<<endl<<i+1<<"element(s) entered";
+   }
+   cout<<endl<<"Enter length of 2nd array\n";
+   cin>>l2;
+   cout<<"Enter "<<l2<<" elements\n";
+   for(int i=0;i<l2;i++)
+   {
+      cin>>data;
+       m1.v2.push_back(data);
+       
+       cout<<endl<<i+1<<" element(s) entered";
+   }
    
-   mergee(v1, v2);
+   m1.merge(m1.v1, m1.v2);
    
     return 0;
 }
